@@ -1,0 +1,57 @@
+@import 'app/styles/index.scss';
+
+.container {
+    @include flex-xy-center;
+
+    position: relative;
+    color: var(--clr-platinum-50);
+
+    &>svg {
+        position: absolute;
+        stroke: var(--clr-platinum);
+        stroke-width: 2px;
+
+        &:nth-child(1) {
+            width: 6.5rem;
+            height: 6.5rem;
+        }
+
+        &:nth-child(2) {
+            width: 7.5rem;
+            height: 7.5rem;
+            opacity: .5;
+        }
+
+        &:nth-child(3) {
+            width: 8.5rem;
+            height: 8.5rem;
+            opacity: .2;
+        }
+    }
+
+    .btnContainer {
+        position: absolute;
+        z-index: 20;
+        color: var(--clr-cooper);
+        
+
+        &.vertex1 {
+            @include hexagon(1);
+            width: 5rem;
+            height: 5.5rem;
+        }
+        &.vertex2 {
+            @include hexagon(2);
+            width: 5.5rem;
+            height: 5rem;
+        }
+        
+        @include button-hover-hex;
+
+        .btn {
+            position: inherit;
+            z-index: inherit;
+            @include flex-xy-center;
+        }
+    }
+}

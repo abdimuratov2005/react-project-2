@@ -1,0 +1,179 @@
+@import '../../../styles/index.scss';
+
+.container {
+    @include flex-column;
+    gap: 1.5rem;
+    opacity: 0;
+
+    &>.header {
+        @include flex-xy-center;
+        height: 5rem;
+    }
+
+    &>.content {
+        @include flex-y-center;
+        gap: 1rem;
+
+        @media (max-width: 600px){
+            padding: 0 1rem;
+        }
+
+        &>div {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 900px) {
+            overflow: auto;    
+        }
+    }
+
+    &>.footer {
+        @include flex-x-center;
+    }
+}
+
+.info {
+    @include flex-y-center;
+    gap: .5rem;
+    flex-grow: 1;
+
+    &>div {
+        flex-grow: 1;
+    }
+
+    .ray {
+        position: absolute;
+        left: -.2rem;
+        //top: 0;
+        //bottom: 0;
+        width: 3.5rem;
+        height: 3rem;
+        background: var(--gradient-cooper);
+        @include light-ray(-90deg, 10%);
+    }
+
+    &>.start,
+    &>.end {
+        position: relative;
+        @include flex-y-center;
+        gap: 1rem;
+        background: var(--gradient-213);
+        border-radius: .8rem;
+        padding: 0 2rem 0 1rem;
+
+        .infoIcon {
+            flex-grow: 1;
+        }
+    }
+
+    &>.icon {
+        @include flex-y-center;
+        gap: .3rem;
+        justify-content: center;
+
+        &>[class*='MuiButton-root'] {
+            padding: .5rem !important;
+            min-width: auto;
+        }
+
+        &>.left,
+        &>.right {
+            position: relative;
+            @include flex-y-center;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-left: 1px solid var(--clr-cooper);
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 1px;
+                background-color: var(--clr-cooper);
+            }
+
+            &::before {
+                height: 1rem;
+                left: .3rem;
+            }
+
+            &::after {
+                height: .5rem;
+                left: .7rem;
+            }
+        }
+
+        &>.left {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media (max-width: 800px) {
+        gap: 0;
+
+        &>.start,
+        &>.end {
+            overflow: hidden;
+            gap: 0;
+            padding: 0 .5rem;
+
+            .infoIcon {
+                
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.latest {
+    @include flex-y-center;
+    gap: .5rem;
+    text-transform: uppercase;
+
+    &>[class*='MuiButton-root'] {
+        padding: .5rem !important;
+        min-width: auto;
+    }
+
+    @media (max-width: 800px) {
+        @include flex-column;
+    }
+
+    [class*='MuiButton-root'] {
+        @media (max-width: 600px) {
+            padding: .2rem .5rem !important;
+        }
+
+        @media (max-width: 500px) {
+            padding: 0 .2rem !important;
+        }
+    }
+    
+}
+
+.progress {
+
+    [class*='Progress_progress'] {
+
+        @media (max-width: 600px) {
+            gap: 1rem !important;
+        }
+
+        @media (max-width: 500px) {
+            gap: .5rem !important;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+
+    .latest,
+    .progress {
+        p, span {
+            font-size: 11px !important;
+        }
+    }
+}

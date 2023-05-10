@@ -1,0 +1,9 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+    }
+}

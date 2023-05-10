@@ -1,0 +1,29 @@
+@import '../../../../../styles/index.scss';
+
+.container {
+    flex: 1 1 0px;
+    color: var(--clr-platinum);
+
+    @include flex-y-center;
+    gap: 1rem;
+
+    padding: 1rem;
+    background-color: var(--clr-black);
+    border-radius: 1rem;
+
+    --this-icon-box: 3rem;
+
+    .icon {
+        flex: 0 0 var(--this-icon-box);
+        @include flex-xy-center;
+        width: var(--this-icon-box);
+        height: var(--this-icon-box);
+        border-radius: .5rem;
+
+        background-color: rgba(var(--cooper), .3);
+    }
+
+    .text {
+        white-space: break-spaces;
+    }
+}

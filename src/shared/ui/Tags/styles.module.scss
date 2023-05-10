@@ -1,0 +1,62 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: start;
+    gap: 1rem;
+    font-size: 12px;
+
+    .icon {
+        @include progress-icon;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .label {
+            color: var(--clr-platinum-50);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+
+            &>div {
+                width: fit-content;
+                border-radius: 1rem;
+                padding: .35rem 1rem;
+                background-color: rgba(var(--white), 0.05);
+                color: var(--clr-platinum-50);
+            }
+
+            .green {
+                background-color: rgba(var(--green), 0.2);
+                color: var(--clr-green);
+            }
+
+            .purple {
+                background-color: rgba(var(--purple), 0.2);
+                color: var(--clr-purple);
+            }
+
+            .cooper {
+                background-color: rgba(var(--cooper), 0.2);
+                color: var(--clr-cooper);
+            }
+
+            .blue {
+                background-color: rgba(var(--blue), 0.2);
+                color: var(--clr-blue);
+            }
+
+            .red {
+                background-color: rgba(var(--red), 0.2);
+                color: var(--clr-red);
+            }
+        }
+    }
+}

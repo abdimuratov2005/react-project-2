@@ -1,0 +1,72 @@
+@mixin paper {
+    background: var(--background);
+    color: var(--text-platinum);
+    border: var(--border-50);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    transform: translateY(-5px);
+
+    & li {
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--clr-platinum) !important;
+            color: var(--background);
+        }
+
+    }
+
+    & li[aria-selected*='true'] {
+        background-color: var(--clr-cooper) !important;
+        color: var(--background);
+
+        &:hover {
+            color: var(--text-platinum) !important;
+        }
+    }
+
+    &input::selection {
+        background: transparent;
+        /* Цвет фона */
+        color: var(--clr-platinum);
+        /* Цвет текста */
+    }
+}
+
+@mixin progress-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--clr-cooper);
+    color: var(--clr-black);
+    border-radius: .5rem;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+@mixin close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 3rem;
+    background: var(--gradient);
+    color: var(--clr-cooper-light);
+    border-radius: .5rem;
+    font-size: 20px;
+    //font-weight: 900;
+    border: 1px solid var(--clr-platinum-5);
+    text-transform: uppercase;
+    transform: scale(1, .8);
+}
+
+@mixin hideScroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+    } 
+}

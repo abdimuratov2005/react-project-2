@@ -1,0 +1,92 @@
+:root {
+    --green: 84, 160, 91;
+    --green-light: 84, 160, 91;
+    --green-cr: 36, 173, 122;
+    --red: 255, 85, 85;
+    --red2: 237, 61, 61;
+    --blue: 67, 107, 211;
+    --aqua: 51, 204, 255;
+    --orange: 144, 87, 22;
+    --cooper: 240, 154, 56;
+    --cooper-light: 125, 104, 102;
+    --cooper-light2: 137, 106, 98;
+    --cooper-light3: 157, 112, 100;
+    --cooper-dark: 78, 42, 32;
+    --cooper-dark2: 60, 35, 28;
+    --cooper-main: 97, 55, 44;
+    --white: 255, 255, 255;
+    --platinum: 255, 255, 255;
+    --black: 0, 0, 0;
+    --bg: 17, 17, 17;
+    --bgmain: 21, 20, 22;
+    --darkbg: 13, 12, 14;
+    --purple: 135, 126, 160;
+    --purple-bl: 68, 169, 169;
+    --purple2: 143, 63, 224;
+
+    --clr-platinum-5: rgba(var(--white), 0.05);
+    --clr-platinum-15: rgba(var(--white), 0.15);
+    --clr-platinum-50: rgba(var(--white), 0.5);
+    --clr-platinum: rgb(var(--white));
+    --clr-cooper: rgb(var(--cooper));
+    --clr-orange: rgb(var(--orange));
+    --clr-cooper-light: rgb(var(--cooper-light));
+    --clr-cooper-light2: rgb(var(--cooper-light2));
+    --clr-cooper-light3: rgb(var(--cooper-light3));
+    --clr-cooper-dark: rgb(var(--cooper-dark));
+    --clr-cooper-dark2: rgb(var(--cooper-dark2));
+    --clr-cooper-main: rgb(var(--cooper-main));
+    --clr-green: rgb(var(--green));
+    --clr-green-light: rgb(var(--green-light));
+    --clr-red: rgb(var(--red));
+    --clr-red2: rgb(var(--red2));
+    --clr-blue: rgb(var(--blue));
+    --clr-aqua: rgb(var(--aqua));
+    --clr-purple: rgb(var(--purple));
+    --clr-purple2: rgb(var(--purple2));
+    --clr-black: rgb(var(--black));
+    --clr-black-15: rgba(var(--black), 0.15);
+    --clr-white: rgb(var(--white));
+    --clr-bg: rgb(var(--bg));
+    --clr-darkbg: rgb(var(--darkbg));
+    --clr-bgmain: rgb(var(--bgmain));
+    --clr-scrollbar: rgba(var(--white), 0.15);
+    --clr-scrollbar-hover: rgba(var(--white), 0.05);
+
+    --text-platinum-5: #FFFFFF0D;
+    --text-platinum-15: #FFFFFF26;
+    --text-platinum-50: #FFFFFF80;
+    --text-platinum: #FFFFFF;
+    --text-cooper: #F09A38;
+    --text-orange: #905716;
+    --text-cooper-light: #7D6866;
+    --text-cooper-light2: rgb(var(--cooper-light2));
+    --text-black: #19181B;
+    --text-dark-gray: #333233;
+    --text-gray: #63636A;
+    --text-green: #54A05B;
+    --text-red: #FF5555;
+    --text-red2: rgb(var(--red2));
+    --text-main: #A98B89;
+
+    --background: #151416;
+    --gradient: linear-gradient(180deg, rgb(20, 20, 22) 9.59%, rgb(45, 27, 22) 90.41%);
+    --gradient-213: linear-gradient(213deg, rgb(20, 20, 22) 9.59%, rgb(45, 27, 22) 90.41%);
+    --gradient-red: linear-gradient(180deg, rgba(var(--red), .05) 9.59%, rgba(var(--red), .1) 90.41%);
+    --gradient-cooper-op: linear-gradient(180deg, rgba(var(--bgmain), .7) 10%, rgba(var(--cooper-dark), .7) 90%);
+    --gradient-cooper: linear-gradient(
+        180deg, 
+        rgba(var(--cooper), 1) 2%, 
+        rgba(var(--cooper), .1) 5%,
+        rgba(var(--black), .05) 100%
+    );
+    
+    --border: 1px solid var(--clr-platinum);
+    --border-5: 1px solid var(--clr-platinum-5);
+    --border-15: 1px solid var(--clr-platinum-15);
+    --border-50: 1px solid var(--clr-platinum-50);
+
+    --transition: 0.3s;
+
+    --size-text: 12px;
+}

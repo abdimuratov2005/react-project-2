@@ -1,0 +1,72 @@
+@import '../../../../app/styles/index.scss';
+
+.container {
+    display: flex; 
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 25rem;
+    font-size: 12px;
+
+    .row {
+        display: flex; 
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .forgot {
+        text-decoration: underline;
+        text-align: right;
+        cursor: pointer;
+        color: var(--clr-cooper-light);
+        font-size: 12px;
+
+        &:hover {
+            color: var(--clr-platinum) !important;
+        }
+    }
+
+    .or {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: .2rem;
+
+        &:before,
+        &:after {
+            flex-grow: 1;
+            content: '';
+            height: 1px;
+            border-bottom: 1px solid var(--clr-cooper-light);
+            opacity: .3;
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 2.2rem;
+    }
+
+    .button button {
+        width: 100%;
+    }
+
+    .signup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: .5rem;
+
+        a {
+            color: var(--clr-cooper);
+            font-style: normal;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

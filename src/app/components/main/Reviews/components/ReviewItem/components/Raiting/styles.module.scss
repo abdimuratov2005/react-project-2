@@ -1,0 +1,15 @@
+@import 'app/styles/index.scss';
+
+.container {
+    @include flex-y-center;
+    gap: .5rem;
+
+    &>div {
+        @include flex-xy-center;
+        width: 2rem;
+        height: 2rem;
+        background-color: rgba(var(--white), .05);
+        border-radius: .3rem;
+    }
+}
+

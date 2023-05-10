@@ -1,0 +1,62 @@
+@mixin button-main {
+    @include button-vars-main();
+
+    color: var(--clr-text-hover);
+    background-color: var(--clr-bg-hover);
+    transition: var(--transition);
+
+    svg {
+        transition: var(--transition) !important;
+    }
+
+    @include button-hover-main();
+}
+
+@mixin button-secondary {
+    
+}
+
+@mixin button-hover-main {
+    @include button-vars-main();
+
+    &:hover { 
+        svg, g {
+            fill: var(--clr-text-hover) !important;
+        }
+        color: var(--clr-text-hover);
+        background-color: var(--clr-bg-hover);
+        opacity: var(--opacity-hover);
+        border-color: var(--border-color-hover);
+
+        &.endIcon>span,
+        &.startIcon>span {
+            &>svg {
+                fill: var(--clr-text-hover) !important;
+
+                &>path {
+                    fill: var(--clr-text-hover) !important;
+                }
+            }
+        }
+    }
+}
+
+@mixin button-hover-hex {
+    @include button-vars-main();
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover { 
+        color: var(--clr-bg-hover);
+    }
+}
+
+@mixin button-vars-main {
+    --clr-text-disabled: var(--clr-white);
+    --clr-bg-disabled: var(--clr-rolling-stone);
+    --clr-bg: var(--clr-cooper);
+    --clr-bg-hover: var(--clr-platinum);
+    --clr-text: var(--text-black);
+    --svg-fill: var(--clr-cooper);
+    --svg-fill-hover: var(--clr-cooper);
+}

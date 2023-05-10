@@ -1,0 +1,142 @@
+@import '../../../styles/index.scss';
+
+.container {
+
+    .buttons {
+        @include flex-y-center;
+        gap: 1rem;
+        padding: 1rem 0;
+        justify-content: space-between;
+
+        a {
+            font-style: unset;
+        }
+
+        [class*='button-text'] {
+            @include flex-y-center;
+            gap: .5rem;
+
+            &>p:nth-child(2) {
+                @include flex-y-center;
+                gap: .5rem;
+
+                @media (max-width: 1400px) {
+                    gap: .2rem;
+                }
+
+                div {
+                    @include flex-xy-center;
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: .3rem;
+                    background-color: var(--clr-platinum-15);
+                    //transition: var(--transition);
+
+                    svg,
+                    svg path {
+                        fill: var(--clr-platinum);
+                    }
+
+                    @media (max-width: 1280px) {
+                        width: 1.5rem;
+                        height: 1.5rem;
+
+                        svg {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                }
+                
+            }
+
+            @media (max-width: 1280px) {
+                @include flex-column;
+                justify-content: center;
+                flex-grow: 0;
+            }
+        }
+
+        @media (max-width: 1600px) {
+            [class*='MuiButton-root'] {
+                padding: 0 1rem !important;
+                overflow: hidden;
+            }
+        }
+
+        @media (max-width: 1280px) {
+
+            [class*='MuiButton-root'] {
+                @include flex-xy-center;
+                flex-direction: column;
+                width: auto !important;
+                height: 8rem;
+                flex-grow: 1;
+            }
+        }
+
+        @media (max-width: 900px) {
+            @include grid('1fr 1fr 1fr', 1rem);
+            justify-content: unset;
+        }
+
+        @media (max-width: 600px) {
+            padding: 1rem;
+            [class*='MuiButton-root'] {
+                font-size: 12px !important;
+                padding: 0 1rem !important;
+            }
+        }
+
+        [class*='MuiButton-root'] {
+            flex-grow: 1;
+
+            @media (max-width: 1280px) {
+                gap: .5rem !important;
+
+                [class*='MuiButton-startIcon'] {
+                    scale: 1.3;
+                }
+            }
+            
+            &[class*='trustpilot'] {
+
+                @media (max-width: 1280px) {
+                    gap: 0 !important;
+                }
+
+                &>*:nth-child(3) {
+                    flex-grow: 1;
+                    @include flex-y-center;
+                    gap: .5rem;
+                    justify-content: end;
+
+                    @media (max-width: 1280px) {
+                        flex-grow: unset;
+                    }
+
+                    &>.endIcon {
+                        @include flex-xy-center;
+                        background-color: rgba(var(--platinum), .1);
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: .5rem;
+
+                        svg,
+                        svg path {
+                            fill: rgba(var(--platinum), 1) !important;
+                        }
+                    }
+                }
+
+                &:hover {
+                    &>*:nth-child(3) {
+                        &>.endIcon {
+                            background-color: var(--clr-black);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

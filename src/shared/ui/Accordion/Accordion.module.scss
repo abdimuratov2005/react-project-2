@@ -1,0 +1,83 @@
+.root {
+    background-color: #0D0C0E !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    width: 100%;
+    height: fit-content;
+
+    &>* {
+        width: 100%;
+        overflow: hidden !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    [class*='MuiButtonBase-root'] {
+        height: 90px !important;
+        margin: 0 !important;
+        padding: 18px !important;
+        padding-right: 28px !important;
+
+        [class*='MuiAccordionSummary-content'] {
+            margin: 0 !important;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+
+            &>p {
+                line-height: 20px;
+                color: var(--clr-platinum);
+                font-size: 14px;
+
+            }
+        }
+    }
+
+    &>[class*='Mui-expanded'] {
+        border-bottom: 1px solid #19181A;
+    }
+
+    [class*='MuiAccordionSummary-expandIconWrapper'] {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        border-radius: 4px;
+        background-color: #2727285d !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &>svg {
+            transition: var(--transition);
+        }
+    }
+
+    [class*='MuiAccordionSummary-expandIconWrapper Mui-expanded'] {
+        transform: none !important;
+
+        &>svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    [class*='MuiAccordionDetails-root'] {
+        padding: 30px;
+        color: var(--clr-platinum);
+        font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+    }
+
+    .headerIcon {
+        min-width: 54px;
+        height: 54px;
+        background-color: var(--clr-cooper);
+        margin-right: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+    }
+}

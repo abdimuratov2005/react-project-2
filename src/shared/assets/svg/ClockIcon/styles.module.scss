@@ -1,0 +1,23 @@
+@import '../../../../app/styles/index.scss';
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+    &.highlight {
+        background-color: var(--clr-cooper);
+        padding: .3rem;
+        border-radius: .5rem;
+    }
+    .svg {
+        fill: var(--clr-platinum);
+
+        &.black {
+			fill: none !important;
+            path {
+				fill: var(--clr-black) !important;
+			}
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 20rem;
+    border-right: 1px solid var(--clr-platinum-5);
+
+    .title,
+    .item {
+        border-left: 2px solid transparent;
+        font-size: 14px;
+        padding: 1rem 2rem;
+    }
+
+    .item {
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+            border-left: 2px solid var(--clr-cooper);
+            color: var(--clr-platinum);
+        }
+
+        &:active {
+            background: none;
+        }
+    }
+
+    .mainMenu {
+
+        .item {
+
+            svg,
+            svg path {
+                fill: var(--clr-cooper-light);
+            }
+
+            @include flex;
+            gap: 1rem;
+
+            &:hover,
+            &.active {
+                svg,
+                svg path {
+                    fill: var(--clr-cooper);
+                }
+            }
+        }
+    }
+    .backToMenu{
+        margin: 1rem 0px;
+        position: relative;
+        left: 1rem;
+    }
+}

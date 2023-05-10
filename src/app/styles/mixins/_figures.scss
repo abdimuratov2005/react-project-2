@@ -1,0 +1,122 @@
+@mixin trapeze($direction, $perc, $half: '') {
+    // TUTORIAL http://jtauber.github.io/articles/css-hexagon.html
+    // https://codepen.io/t_afif/pen/jOMZwLa
+    // https://www.cssportal.com/css-clip-path-generator/
+
+    @if $direction == up {
+        @if $half == right {
+            --poligon: polygon(0 0, calc(100% - #{$perc}) 0, 100% 100%, 0 100%);
+        } @else if $half == left {
+            --poligon: polygon(#{$perc} 0, 100% 0, 100% 100%, 0 100%);
+        } @else {
+            --poligon: polygon(#{$perc} 0, calc(100% - #{$perc}) 0, 100% 100%, 0 100%);
+        }
+    } @else if $direction == down {
+        @if $half == right {
+            --poligon: polygon(0 0, 100% 0, calc(100% - #{$perc}) 100%, 0 100%);
+        } @else if $half == left {
+            --poligon: polygon(0 0, 100% 0, 100% 100%, #{$perc} 100%);
+        } @else {
+            --poligon: polygon(0 0, 100% 0, calc(100% - #{$perc}) 100%, #{$perc} 100%);
+        }
+    }
+    
+    filter: url(#round);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+    &::before {
+        @include figureBefore;
+    }
+
+	[class*='Typography_root'] {
+		position: inherit;
+		z-index: 10;
+	}
+}
+
+@mixin hexagon($vertex: 2) { // with rounded corners
+    @if $vertex == 1 {
+        --poligon: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); //1 vertex
+    } @else {
+        --poligon: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); //2 vertex
+    }
+    
+    filter: url(#round);
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+    &::before {
+		@include figureBefore;
+    }
+}
+
+@mixin hexagon2($vertex: 2) { //without rounded corners
+    @if $vertex == 1 {
+        --poligon: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); //1 vertex
+    } @else {
+        --poligon: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); //2 vertex
+    }
+
+    // filter: url(#round); // <- does not work without ::before
+
+    clip-path: var(--poligon);
+    -webkit-clip-path: var(--poligon);
+}
+
+@mixin arrow($direction, $perc: 25%) {
+
+    filter: url(#round);
+
+    @if $direction == right {
+        --poligon: polygon(0% 0%, calc(100% - #{$perc}) 0%, 100% 50%, calc(100% - #{$perc}) 100%, 0% 100%);
+    } @else if $direction == left {
+        --poligon: polygon(#{$perc} 0%, 100% 1%, 100% 100%, #{$perc} 100%, 0% 50%);
+    }
+
+    &:before {
+        @include figureBefore;
+    }
+}
+
+@mixin chevron($direction, $perc: 25%) {
+
+    filter: url(#round);
+
+    @if $direction == right {
+        --poligon: polygon(100% 0%, calc(100% - #{$perc}) 50%, 100% 100%, 0 100%, 0 0);
+    } @else if $direction == left {
+        --poligon: polygon(100% 0, 100% 100%, 0% 100%, #{$perc} 50%, 0% 0%);
+    }
+
+    &:before {
+        @include figureBefore;   
+    }
+}
+
+@mixin light-ray($rotate: 0deg, $perc) {
+    --poligon: polygon(#{$perc} 0%, calc(100% - #{$perc}) 0%, 100% 100%, 0% 100%);
+
+    clip-path: var(--poligon);
+    -webkit-clip-path: var(--poligon);
+
+    transform: rotate(#{$rotate});
+}
+
+
+@mixin figureBefore() {
+    position: absolute;
+    z-index: 2;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: currentColor;
+    clip-path: var(--poligon);
+    -webkit-clip-path: var(--poligon);
+}

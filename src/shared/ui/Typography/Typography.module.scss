@@ -1,0 +1,216 @@
+@import '../../../app/styles/index.scss';
+
+.root {
+    @include flex-y-center;
+    gap: .5rem;
+    white-space: break-spaces;
+    
+    &.h1 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    &.h2 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &.h3 {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    @media (max-width: 960px) {
+        &.h1 {
+            font-size: 28px;
+        }
+
+        &.h2 {
+            font-size: 22px;
+        }
+
+        &.h3 {
+            font-size: 18px;
+        }
+    }
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+	gap: .5rem;
+}
+
+.highlight {
+	background-color: var(--clr-platinum-5);
+	border: 1px solid var(--clr-platinum-5);
+	border-radius: .3rem;
+	padding: .7rem;
+}
+
+.color {
+    &.platinum {
+        color: var(--text-platinum);
+    }
+
+    &.platinum-5 {
+        color: var(--text-platinum-5);
+    }
+
+    &.platinum-15 {
+        color: var(--text-platinum-15);
+    }
+
+    &.platinum-50 {
+        color: var(--text-platinum-50);
+    }
+
+    &.cooper {
+        color: var(--text-cooper);
+    }
+
+    &.cooper-light {
+        color: var(--text-cooper-light);
+    }
+
+    &.cooper-light2 {
+        color: var(--text-cooper-light2);
+    }
+
+    &.cooper-light3 {
+        color: var(--text-cooper-light3);
+    }
+
+    &.gray {
+        color: var(--text-gray);
+    }
+
+    &.dark-gray {
+        color: var(--text-dark-gray);
+    }
+
+    &.black {
+        color: var(--text-black);
+    }
+
+    &.green {
+        color: var(--text-green);
+    }
+
+    &.red {
+        color: var(--text-red);
+    }
+
+    &.red2 {
+        color: var(--text-red2);
+    }
+}
+
+$fontSizes: 8px,
+10px,
+11px,
+12px,
+13px,
+14px,
+16px,
+18px,
+19px,
+20px,
+22px,
+24px,
+26px,
+28px,
+30px,
+32px,
+34px,
+42px,
+48px,
+65px;
+$fontWeights: 100,
+200,
+300,
+400,
+500,
+600,
+700,
+800,
+900;
+$textAligns: left,
+right,
+center;
+$fontFamilies: 'Montserrat';
+$displayMode: 'block';
+
+@mixin FontSizes() {
+    @each $size in $fontSizes {
+        &.font-size-#{$size} {
+            font-size: $size;
+        }
+    }
+}
+
+@mixin Displays() {
+    @each $display in $displayMode {
+        &.display-#{$display} {
+            display: $display !important;
+        }
+    }
+}
+
+
+@mixin FontEWeights() {
+    @each $weight in $fontWeights {
+        &.font-weight-#{$weight} {
+            font-weight: $weight;
+        }
+    }
+}
+
+@mixin MarginSizes() {
+    @each $size in $fontSizes {
+        &.margin-bottom-#{$size} {
+            margin-bottom: $size;
+        }
+    }
+}
+
+@mixin TextAligns() {
+    @each $align in $textAligns {
+        &.text-align-#{$align} {
+            text-align: $align;
+        }
+    }
+}
+
+@mixin FontFamilies() {
+    @each $fontFamily in $fontFamilies {
+        &.font-family-#{$fontFamily} {
+            font-family: $fontFamily;
+        }
+    }
+}
+
+.fontSize {
+    @include FontSizes();
+}
+
+.fontWeight {
+    @include FontEWeights();
+}
+
+.Display {
+    @include Displays();
+}
+
+.marginBottom {
+    @include MarginSizes();
+}
+
+.textAlign {
+    @include TextAligns();
+}
+
+.fontFamily {
+    @include FontFamilies();
+}

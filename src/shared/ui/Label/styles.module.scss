@@ -1,0 +1,49 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 900;
+    font-size: 16px !important;
+
+    .line {
+        flex-grow: 1;
+        border-bottom: 1px solid var(--text-cooper-light);
+        height: 1px;
+    }
+
+    &.small {
+        font-size: 12px !important;
+    }
+    &.big {
+        font-size: 18px !important;
+    }
+
+    &.button {
+        width: fit-content;
+        padding: 1rem 7rem 1rem 1.5rem;
+        border: 1px solid va;
+        border: 1px solid var(--clr-platinum-15);
+        border-radius: .5rem;
+        background: var(--gradient);
+
+        &.small {
+            padding: .7rem 1.5rem;
+        }
+
+        &.black {
+            background: none;
+            background-color: var(--clr-black);
+        }
+    }
+
+    &.rating {
+        width: fit-content;
+        padding: 1rem 1.5rem;
+        border: 1px solid var(--clr-platinum-15);
+        border-radius: .5rem;
+        background-color: var(--clr-platinum-5);
+    }
+}

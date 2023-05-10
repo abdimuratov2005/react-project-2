@@ -1,0 +1,27 @@
+
+.header {
+    width: 20rem;
+    height: 3rem;
+    
+    shape-rendering: geometricPrecision; 
+    text-rendering: geometricPrecision; 
+    image-rendering: optimizeQuality; 
+    fill-rule: evenodd; 
+    clip-rule: evenodd;
+
+    @media (max-width: 800px) {
+        height: 2.5rem;
+    }
+
+    @media (max-width: 700px) {
+        height: 2rem;
+    }
+
+    @media (max-width: 600px) {
+        height: 1.5rem;
+    }
+
+    @media (max-width: 400px) {
+        height: 1.2rem;
+    }
+}

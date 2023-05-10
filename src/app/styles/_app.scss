@@ -1,0 +1,46 @@
+body {
+    color: var(--text-main);
+}
+
+a {
+    color: var(--text-cooper);
+    text-decoration: none;
+    font-style: italic;
+
+    &:hover {
+        color: var(--text-platinum);
+    }
+}
+
+.app {
+    width: 100%;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 4rem;
+        gap: 2rem;
+        margin-top: 6rem;
+        min-width: 100%;
+
+        @media (max-width: 1280px) {
+            padding: 0 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            padding: 0;
+        }
+    }
+
+    &__special {
+        position: absolute;
+        z-index: 99;
+        display: flex;
+        flex-wrap: nowrap;
+        top: 4rem;
+
+        @media (max-width: 1280px) {
+            top: 6rem;
+        }
+    }
+}

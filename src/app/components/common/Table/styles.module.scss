@@ -1,0 +1,51 @@
+@import '../../../styles/index.scss';
+
+.container {
+    display: grid;
+    row-gap: 1rem;
+    align-content: stretch;
+
+    &>.head {
+        display: contents;
+
+        &>div {
+            width: 100%;
+            background-color: rgba(var(--white), .05);
+            padding: 1.5rem .5rem;
+            font-size: 14px;
+        }
+
+        &>div:first-child {
+            padding-left: 1.5rem !important;
+        }
+    }
+
+    &>.row {
+        display: contents;
+        
+        &>div {
+            @include flex-xy-center;
+            padding: .5rem 0;
+            width: 100%;
+            background-color: rgba(var(--black), 1);
+            align-items: center;
+
+            &:first-child,
+            &:last-child {
+                padding: .5rem;
+            }
+        }
+    }
+
+    &>.head,
+    &>.row {
+        
+        &>div:first-child {
+            border-radius: .5rem 0 0 .5rem;
+        }
+        &>div:last-child {
+            border-radius: 0 .5rem .5rem 0;
+            //padding-right: 1.5rem !important;
+        }
+    }
+}

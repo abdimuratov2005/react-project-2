@@ -1,0 +1,193 @@
+@import '../../../app/styles/index.scss';
+
+.wrapper {
+    width: 100%;
+
+    .paper {
+        @include paper;
+    }
+
+    /* ------------------ cooper ------------------- */
+    .variant_cooper {
+        & div[class*='TextField_wrapper'] {
+
+            &>div {
+                background: var(--gradient);
+                border-radius: 6px;
+
+                &>div {
+                    padding: 0;
+                }
+            }
+        }
+
+        & input {
+            padding: 17px 50px 17px 20px !important;
+            //height: 30px;
+            caret-color: transparent;
+
+            &::placeholder {
+                color: var(--text-cooper-light);
+                opacity: 1;
+            }
+        }
+
+        *::selection {
+            background: transparent !important;
+            /* Цвет фона */
+            color: var(--clr-platinum) !important;
+            /* Цвет текста */
+        }
+
+        & div[class*='MuiAutocomplete-endAdornment'] {
+            top: calc(50% - 17px);
+            right: 12px;
+
+            & button[class*='clearIndicator'] {
+                display: none;
+            }
+
+            & button {
+                padding: 0 !important;
+                margin: 0 !important;
+                border-radius: 6px;
+                width: 32px;
+                height: 32px;
+                background-color: #272728;
+
+                & path {
+                    fill: #666666;
+                }
+            }
+
+            & button[class*='popupIndicatorOpen'] {
+                background-color: #fff;
+
+                & path {
+                    fill: #47444E;
+                }
+            }
+        }
+    }
+
+    /* ------------------ gray ------------------- */
+    .variant_gray {
+        & div[class*='TextField_wrapper'] {
+
+            &>div {
+                border-radius: 6px;
+                background-color: var(--clr-bg);
+                border: 1px solid var(--clr-platinum-5);
+
+                &>div {
+                    padding: 9px 50px 9px 15px !important;
+                }
+            }
+        }
+
+        *::selection {
+            background: transparent !important;
+            /* Цвет фона */
+            color: var(--clr-platinum) !important;
+            /* Цвет текста */
+        }
+
+        & input {
+            padding: 0 !important;
+            height: 30px;
+            font-size: 12px;
+            caret-color: transparent;
+        }
+
+        & div[class*='MuiAutocomplete-endAdornment'] {
+            top: calc(50% - 16px);
+            right: 9px;
+
+            & button[class*='clearIndicator'] {
+                display: none;
+            }
+
+            & button {
+                padding: 0 !important;
+                margin: 0 !important;
+                border-radius: 6px;
+                width: 30px;
+                height: 30px;
+                background-color: #272728;
+
+                & path {
+                    fill: #666666;
+                }
+            }
+
+            & button[class*='popupIndicatorOpen'] {
+                background-color: #fff;
+
+                & path {
+                    fill: #47444E;
+                }
+            }
+        }
+    }
+
+    .small {
+        & div[class*='TextField_wrapper'] {
+
+            &>div {
+                border-radius: 6px;
+
+                &>div {
+                    padding: 6px 50px 6px 15px !important;
+                }
+            }
+        }
+
+        & + [class*='MuiAutocomplete-popper'] {
+            font-size: 12px;
+        }
+
+        *::selection {
+            background: transparent !important;
+            /* Цвет фона */
+            color: var(--clr-platinum) !important;
+            /* Цвет текста */
+        }
+
+        & input {
+            padding: 0 !important;
+            height: 30px;
+            font-size: 12px;
+            caret-color: transparent;
+        }
+
+        & div[class*='MuiAutocomplete-endAdornment'] {
+            top: calc(50% - 16px);
+            right: 9px;
+
+            & button[class*='clearIndicator'] {
+                display: none;
+            }
+
+            & button {
+                padding: 0 !important;
+                margin: 0 !important;
+                border-radius: 6px;
+                width: 30px;
+                height: 30px;
+                background: transparent;
+
+                & path {
+                    fill: #4A444F;
+                }
+            }
+
+            & button[class*='popupIndicatorOpen'] {
+                background-color: transparent;
+
+                & path {
+                    fill: var(--clr-platinum);
+                }
+            }
+        }
+    }
+}

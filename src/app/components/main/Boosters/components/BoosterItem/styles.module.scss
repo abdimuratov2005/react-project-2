@@ -1,0 +1,67 @@
+@import '../../../../../styles/index.scss';
+
+.container {
+    width: 8.2rem;
+    
+    &>div {
+        @include flex-column;
+        @include flex-xy-center;
+        gap: 1rem;
+        cursor: pointer;
+
+        width: 10rem;
+        height: 8.5rem;
+
+        &>[class*='Typography_root'] {
+            max-width: 5rem;
+            text-align: center;
+        }
+    }
+
+    &:hover {
+        &>.main {
+            display: none;
+        }
+        &>.hover {
+            display: flex !important;
+        }
+    }
+
+    .plug {
+        background: rgba(var(--platinum), .05);
+        @include hexagon2();
+        cursor: default;
+    }
+
+    &>.main {
+        background: var(--gradient-213);
+        @include hexagon2();
+
+        &.hide {
+            display: none !important;
+        }
+    }
+
+    &>.hover {
+        display: none !important;
+        color: var(--clr-cooper);
+        @include hexagon();
+
+        &.show {
+            display: flex !important;
+        }
+
+        &>.content {
+            @include flex-column;
+            @include flex-xy-center;
+            position: absolute;
+            z-index: 10;
+            gap: 1rem;
+
+            &>[class*='Typography_root'] {
+                max-width: 5rem;
+                text-align: center;
+            }
+        }
+    }
+}

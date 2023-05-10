@@ -1,0 +1,740 @@
+@import '../../../app/styles/index.scss';
+
+.root {
+    --p: unset;
+    --clr-bg: unset;
+    --clr-bg-danger: unset;
+    --clr-bg-disabled: unset;
+    --clr-bg-hover: unset;
+    --clr-bg-active: unset;
+    --clr-text: unset;
+    --clr-text-hover: unset;
+    --clr-text-active: unset;
+    --clr-text-disabled: unset;
+    --rounded: unset;
+    --border-color: unset;
+    --border-style: solid;
+    --border-color-hover: unset;
+    --border-width: 1px;
+    --svg-fill: unset;
+    --svg-fill-hover: unset;
+    --fs: unset;
+    --leading: unset;
+    --opacity-hover: 1;
+
+    &.variant_pale {
+        background-color: var(--clr-black-15) !important;
+    }
+
+    &.variant_contained,
+    &.variant_secondary,
+    &.variant_copy,
+    &.variant_pale,
+    &.variant_chat,
+    &.variant_close,
+    &.variant_close2,
+    &.variant_lcooper,
+    &.variant_icon,
+    &.variant_icon_header,
+    &.variant_colored {
+		display: flex;
+        gap: 7px;
+        padding: var(--p);
+        color: var(--clr-text);
+        background-color: var(--clr-bg);
+        border-radius: var(--rounded);
+        border-width: var(--border-width);
+        border-color: var(--border-color);
+        border-style: var(--border-style);
+        line-height: var(--leading);
+        font-weight: 700;
+        font-size: var(--fs);
+        width: fit-content;
+        text-transform: none;
+        transition: var(--transition);
+        white-space: nowrap;
+        
+        &>* {
+            transition: var(--transition) !important;
+        }
+
+        &:hover { 
+            svg, g {
+                fill: var(--clr-text-hover) !important;
+            }
+            color: var(--clr-text-hover);
+            background-color: var(--clr-bg-hover);
+            opacity: var(--opacity-hover);
+            border-color: var(--border-color-hover);
+
+            &.endIcon>span,
+            &.startIcon>span {
+                &>svg {
+                    fill: var(--clr-text-hover) !important;
+
+                    &>path {
+                        fill: var(--clr-text-hover) !important;
+                    }
+                }
+            }
+        }
+
+        &.endIcon>span,
+        &.startIcon>span {
+            margin: 0 !important;
+
+            &>svg {
+
+                &>path {
+                    transition: var(--transition);
+                }
+            }
+        }
+    }
+
+    &.variant_contained,
+    &.variant_secondary,
+    &.variant_copy,
+    &.variant_pale,
+    &.variant_chat,
+    &.variant_close,
+    &.variant_close2,
+    &.variant_lcooper,
+    &.variant_icon,
+    &.variant_icon_header {
+        
+        &.endIcon>span,
+        &.startIcon>span {
+            &>svg {
+                fill: var(--clr-text) !important;
+
+                &>path {
+                    fill: var(--clr-text) !important;
+                }
+            }
+        }
+    }
+}
+
+[class*='MuiButton-startIcon'] {
+    display: flex;
+    align-items: center;
+}
+
+.startIconBg {
+    text-transform: uppercase !important;
+    white-space: nowrap;
+
+    [class*='MuiButton-startIcon'] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        margin: 0 !important;
+    }
+}
+
+/* ------------------ contained ------------------ */
+.variant_contained {
+    --p: 10px 19px;
+    --fs: 14px;
+    --fw: 700;
+    --rounded: 6px;
+    --leading: 30px;
+}
+
+.variant_contained {
+    --clr-text-disabled: var(--clr-white);
+    --clr-bg-disabled: var(--clr-rolling-stone);
+}
+
+.variant_contained {
+    &.color_classic {
+        --clr-bg: var(--clr-cooper);
+        --clr-bg-hover: var(--clr-platinum);
+        --clr-text: var(--text-black);
+        --clr-text-hover: var(--text-black);
+
+        padding: 10px 19px !important;
+
+        &.icon_bgcolor {
+
+            [class*='MuiButton-startIcon'],
+            [class*='MuiButton-endIcon'] {
+                background-color: var(--clr-black);
+    
+                svg,
+                svg path {
+                    fill: var(--clr-cooper) !important;
+                }
+            }
+
+            &:hover {
+                [class*='MuiButton-startIcon'],
+                [class*='MuiButton-endIcon'] {
+                    svg,
+                    svg path {
+                        fill: var(--clr-cooper) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.color_black {
+        --clr-bg: var(--clr-platinum-5);
+        --clr-bg-hover: var(--clr-platinum);
+        --clr-text: var(--text-platinum);
+        --clr-text-hover: var(--clr-black);
+        padding: 10px 19px !important;
+        border: none !important;
+
+        &.icon_bgcolor {
+
+            [class*='MuiButton-startIcon'],
+            [class*='MuiButton-endIcon'] {
+                background-color: var(--clr-cooper);
+    
+                svg,
+                svg path {
+                    fill: var(--clr-black) !important;
+                }
+            }
+        }
+    }
+
+    &.color_gray {
+        --clr-bg: rgba(var(--platinum), .1);
+        --clr-bg-hover: var(--clr-platinum);
+        --clr-text: var(--clr-platinum-15);
+        --clr-text-hover: var(--clr-black);
+        padding: .5rem 2rem !important;
+        border-color: rgba(var(--platinum), .1);
+    }
+
+    &.color_green-cr {
+        --clr-bg: rgba(var(--green-cr), 1);
+        --clr-bg-hover: var(--clr-platinum);
+        --clr-text: var(--text-platinum);
+        --clr-text-hover: var(--clr-black);
+        padding: 10px 19px !important;
+        border: none !important;
+
+        &.icon_bgcolor {
+
+            [class*='MuiButton-startIcon'],
+            [class*='MuiButton-endIcon'] {
+                background-color: var(--clr-black);
+    
+                svg,
+                svg path {
+                    fill: var(--clr-black) !important;
+                }
+            }
+        }
+    }
+
+    .trustpilot {
+        border: none;
+    }
+
+    &.startIconBg {
+        padding: 18px 100px 18px 19px !important;
+        border-radius: .5rem;
+
+        [class*='MuiButton-startIcon'] {
+            background-color: var(--clr-black);
+            color: var(--clr-cooper);
+            height: 39px;
+            width: 39px;
+        }
+    }
+
+    &.icon_bgcolor {
+
+        [class*='MuiButton-startIcon'],
+        [class*='MuiButton-endIcon'] {
+            @include flex-xy-center();
+            padding: .3rem;
+            border-radius: .3rem;
+
+            // svg,
+            // svg path {
+            //     fill: var(--clr-cooper) !important;
+            //     stroke: var(--clr-cooper) !important;
+            // }
+        }
+    }
+
+    // [class*='MuiButton-startIcon'],
+    // [class*='MuiButton-endIcon'] {
+    //     @include flex-xy-center;
+    //     height: 2.2rem;
+    //     width: 2.2rem;
+    //     border-radius: var(--rounded);
+    // }
+}
+
+.small {
+    --p: 6px 9px;
+}
+
+/* --------------------- secondary --------------------- */
+.variant_secondary {
+    --p: 6px 9px;
+    --fs: 12px;
+    --fw: 700;
+    --rounded: 6px;
+    --leading: 30px;
+    --clr-bg: transparent;
+}
+
+.variant_secondary {
+    --clr-text: var(--text-cooper);
+    --clr-text-hover: var(--text-platinum);
+    --border-color: var(--clr-platinum-15);
+    --border-color-hover: var(--clr-platinum-50);
+    --svg-fill: var(--clr-cooper);
+    --svg-fill-hover: var(--clr-cooper);
+    padding: 6px 9px !important;
+
+    &.startIconBg {
+        padding: 18px 100px 18px 19px !important;
+        border-radius: .5rem;
+
+        [class*='MuiButton-startIcon'] {
+            background-color: rgba(var(--orange), .25);
+            color: var(--clr-cooper);
+            height: 39px;
+            width: 39px;
+        }
+    }
+
+    &.color_black {
+        background-color: var(--clr-black) !important;
+    }
+
+    &.color_white {
+        svg,
+        svg path {
+            fill: var(--clr-platinum) !important;
+        }
+    }
+}
+
+/* --------------------- pale --------------------- */
+.variant_pale {
+    --p: 10px 19px;
+    --fs: 14px;
+    --fw: 700;
+    --rounded: 6px;
+    --leading: 30px;
+    --clr-bg: transparent;
+}
+
+.variant_pale {
+    &.color_classic {
+        --clr-text: var(--text-platinum);
+        --clr-text-hover: var(--text-platinum-50);
+        --border-color: var(--clr-platinum-15);
+        --border-color-hover: var(--clr-platinum);
+        --svg-fill: var(--clr-cooper);
+        --svg-fill-hover: var(--clr-cooper);
+        padding: 10px 19px !important;
+    }
+
+    &.color_cooper {
+        --clr-text: var(--text-cooper);
+        --clr-text-hover: var(--text-platinum);
+    }
+}
+
+/* --------------------- copy --------------------- */
+.variant_copy {
+    --p: 12px 34px;
+    --fs: 14px;
+    --fw: 700;
+    --rounded: 6px;
+    --leading: 17px;
+    background: var(--gradient-213);
+}
+
+.variant_copy {
+    &.color_classic {
+        --clr-text: var(--text-cooper-light);
+        --clr-text-hover: var(--text-platinum);
+        --border-color: var(--clr-platinum-5);
+        --border-color-hover: var(--clr-platinum-50);
+        --svg-fill: var(--clr-cooper-light);
+        --svg-fill-hover: var(--clr-platinum);
+        padding: 12px 34px !important;
+    }
+}
+
+/* --------------------- chat --------------------- */
+.variant_chat {
+    &.color_classic {
+        --clr-bg: var(--clr-cooper);
+        --clr-bg-hover: var(--clr-platinum);
+        --clr-text: var(--text-black);
+        --fs: 18px;
+        --fw: 700;
+        --rounded: 8px;
+        --leading: 30px;
+        padding: .8rem 1rem !important;
+        --clr-text-disabled: var(--clr-white);
+        --clr-bg-disabled: var(--clr-rolling-stone);
+    }
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+}
+
+/* --------------------- close --------------------- */
+.variant_close {
+    --fs: 18px;
+    --rounded: 8px;
+}
+
+.variant_close {
+    &.color_classic {
+        --clr-text: var(--text-cooper-light);
+        --clr-text-hover: var(--text-platinum);
+        --border-color: var(--clr-platinum-5);
+        --border-color-hover: var(--clr-platinum-50);
+        --svg-fill: var(--clr-cooper-light);
+        --svg-fill-hover: var(--clr-platinum);
+        padding: .8rem 1rem !important;
+        background: var(--gradient-213);
+        font-weight: 100;
+        transform: scale(1, .8);
+    }
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+}
+
+/* --------------------- close2 --------------------- */
+.variant_close2 {
+    --fs: 18px;
+    --rounded: 8px;
+}
+
+.variant_close2 {
+    &.color_classic {
+        --clr-text: var(--text-cooper-light);
+        --clr-text-hover: var(--text-platinum);
+        --border-color: var(--clr-platinum-5);
+        --border-color-hover: var(--clr-platinum-50);
+        --svg-fill: var(--clr-cooper-light);
+        --svg-fill-hover: var(--clr-platinum);
+        padding: .5rem .8rem !important;
+        background-color: rgba(var(--white), .2);
+        font-weight: 100;
+        transform: scale(1, .8);
+
+        &:hover {
+            background-color: rgba(var(--white), .1) !important;
+        }
+    }
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+}
+
+/* --------------------- lcooper --------------------- */
+.variant_lcooper {
+    --fs: 14px;
+    --rounded: 8px;
+}
+
+.variant_lcooper {
+    &.color_classic {
+        --clr-text: var(--text-cooper-light);
+        --clr-text-hover: var(--text-platinum);
+        --border-color: var(--clr-platinum-5);
+        --border-color-hover: var(--clr-platinum-50);
+        --svg-fill: var(--clr-cooper-light);
+        --svg-fill-hover: var(--clr-platinum);
+        padding: .8rem 1rem !important;
+        background: var(--gradient-213);
+        font-weight: 100;
+    }
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+}
+
+/* --------------------- icon --------------------- */
+.variant_icon {
+    --fs: 14px;
+    --rounded: 8px;
+}
+
+.variant_icon {
+    height: 3rem;
+    width: 3rem !important;
+
+    --clr-text: var(--text-cooper-light);
+    --clr-text-hover: var(--text-platinum);
+    --border-color: var(--clr-platinum-5);
+    --border-color-hover: var(--clr-platinum-50);
+    --svg-fill: var(--clr-cooper-light);
+    --svg-fill-hover: var(--clr-platinum);
+    background: var(--gradient-213);
+    font-weight: 100;
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+}
+
+/* --------------------- icon_header --------------------- */
+.variant_icon_header {
+    --fs: 14px;
+    --rounded: 8px;
+}
+
+.variant_icon_header {
+    height: 2.5rem;
+    width: 2.5rem !important;
+    //border: none !important;
+
+    --clr-text: var(--text-cooper-light);
+    --clr-text-hover: var(--text-platinum);
+    --border-color: transparent;
+    --border-color-hover: var(--clr-platinum-50);
+    --svg-fill: var(--clr-cooper-light);
+    --svg-fill-hover: var(--clr-platinum);
+    background: var(--gradient-213);
+    font-weight: 100;
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+
+    &[class*='color_'] {
+        background: none;
+    }
+
+    $btnColors: (
+        'red': 1,
+        'blue': 1,
+        'aqua': 1,
+        'green-light': 1,
+        'green': 1,
+        'cooper': 1,
+    );
+
+    @mixin initColors() {
+        @each $name, $color in $btnColors {
+            &.color_#{$name} {
+                background-color: rgba(var(--#{$name}), .1) !important;
+                svg,
+                svg path {
+                    fill: rgba(var(--#{$name}), 1);
+                }
+            }
+        }
+    }
+
+    $btnColors2: (
+        'dark-gray': clr-platinum-5,
+        'red2': clr-red2,
+    );
+
+    @mixin initColors2() {
+        @each $name, $color in $btnColors2 {
+            &.color_#{$name} {
+                background-color: var(--#{$color}) !important;
+
+                svg,
+                svg path {
+                    fill: var(--clr-white);
+                }
+            }
+        }
+    }
+
+    @include initColors();
+    @include initColors2();
+}
+
+/* --------------------- colored --------------------- */
+.variant_colored {
+    --fs: 12px;
+    --rounded: 8px;
+}
+
+.variant_colored {
+
+    $btnColors: (
+        'green-light': 1,
+        'green': 1,
+        'cooper': 1,
+        'cooper-light': 1,
+        'blue': 1
+    );
+
+    @mixin initBtnColors() {
+        @each $name, $color in $btnColors {
+
+            &.color_#{$name} {
+                --clr-text: rgba(var(--#{$name}), 1);
+                background-color: rgba(var(--#{$name}), .1) !important;
+        
+                [class*='MuiButton-startIcon'] {
+                    background-color: rgba(var(--#{$name}), .3);
+                    svg {
+                        transition: unset !important;
+                    }
+                }
+            }
+        }
+    }
+
+    $btn2Colors: (
+        'cooper2': cooper,
+        'green2': green,
+        'blue2': blue
+    );
+
+    @mixin initBtn2Colors() {
+        @each $name, $color in $btn2Colors {
+
+            &.color_#{$name} {
+                --clr-text: rgba(var(--darkbg), 1);
+                background-color: rgba(var(--#{$color}), 1) !important;
+        
+                [class*='MuiButton-startIcon'] {
+                    background-color: rgba(var(--darkbg), .15);
+                    svg {
+                        transition: unset !important;
+                    }
+                    svg,
+                    svg path {
+                        fill: rgba(var(--darkbg), 1) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    $btn3Colors: (
+        'cooper3': cooper,
+        'green3': green,
+        'blue3': blue,
+        'red3': red,
+        'green-cr3': green-cr,
+        'purple-bl3': purple-bl,
+        'purple3': purple2,
+    );
+
+    @mixin initBtn3Colors() {
+        @each $name, $color in $btn3Colors {
+
+            &.color_#{$name} {
+                --clr-text: rgba(var(--white), 1);
+                background-color: rgba(var(--darkbg), 1) !important;
+
+                &:hover {
+                    background-color: rgba(var(--platinum), .05) !important;
+                    //color: var(--clr-darkbg);
+
+                    [class*='MuiButton-startIcon'] {
+                        background-color: rgba(var(--darkbg), 1);
+
+                        svg,
+                        svg path {
+                            fill: rgba(var(--#{$color}), 1) !important;
+                        }
+                    }
+                }
+        
+                [class*='MuiButton-startIcon'] {
+                    background-color: rgba(var(--#{$color}), .15);
+                    svg {
+                        transition: unset !important;
+                    }
+                    svg,
+                    svg path {
+                        fill: rgba(var(--#{$color}), 1) !important;
+                    }
+                }
+
+                [class*='MuiButton-endIcon'] {
+                    background-color: rgba(var(--white), .15);
+                    svg,
+                    svg path {
+                        fill: rgba(var(--white), 1) !important;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    height: 3rem;
+    width: auto !important;
+    padding: .5rem 2rem .5rem .5rem !important;
+    text-transform: uppercase !important;
+    border: none !important;
+
+    --clr-text: var(--text-cooper-light);
+    --clr-text-hover: var(--text-platinum);
+    --clr-bg-hover: var(--clr-platinum-5);
+    //--border-color: var(--clr-platinum-5);
+    //--border-color-hover: var(--clr-platinum-50);
+    --svg-fill: var(--clr-cooper-light);
+    --svg-fill-hover: var(--clr-platinum);
+    --leading: 20px;
+
+    &[class*='MuiButtonBase-root'] {
+        min-width: auto !important;
+    }
+
+    &[class*='color_'] {
+        background: none;
+    }
+
+    [class*='MuiButton-startIcon'],
+    [class*='MuiButton-endIcon'] {
+        @include flex-xy-center;
+        height: 2.2rem;
+        width: 2.2rem;
+        border-radius: var(--rounded);
+    }
+
+    @include initBtnColors();
+    @include initBtn2Colors();
+    @include initBtn3Colors();
+}
+
+.big {
+    font-size: 14px !important;
+    font-weight: 900;
+    height: 4.5rem;
+    width: 17rem !important;
+    padding: 0 1.2rem !important;
+    justify-content: start !important;
+    border-radius: .8rem !important;
+    gap: .5rem !important;
+
+    @media (max-width: 1280px) {
+        justify-content: center !important;
+    }
+
+    [class*='button-text'] {
+        flex-grow: 1;
+        text-align: left;
+        @include flex;
+        justify-content: space-between;
+    }
+    [class*='MuiButton-endIcon'] {
+        
+    }
+}

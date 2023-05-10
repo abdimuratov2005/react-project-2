@@ -1,0 +1,12 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    position: fixed;
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(var(--bgmain), .95);
+    backdrop-filter: blur(10px);
+    min-width: 100%;
+}

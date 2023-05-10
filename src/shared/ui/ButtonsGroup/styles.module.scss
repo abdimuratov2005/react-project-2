@@ -1,0 +1,25 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &.start {
+        justify-content: start;
+    }
+
+    &.end {
+        justify-content: end;
+    }
+
+    &.between {
+        justify-content: space-between;
+    }
+
+    &.contained {
+        &>* {
+            flex-grow: 1;
+        }
+    }
+}

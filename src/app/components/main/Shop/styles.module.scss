@@ -1,0 +1,94 @@
+@import '../../../styles/index.scss';
+
+.container {
+    @include flex-column;
+    gap: 2rem;
+    opacity: 0;
+    
+    @media (max-width: 600px){
+        padding: 0 1rem;
+    }
+
+    &>.title {
+        @include flex-x-center;
+        gap: 1rem;
+    }
+
+    &>.buttons {
+        @include flex-x-center;
+        gap: 1rem;
+
+        [class*='MuiFormGroup-root'] {
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    .buttonsMobile {
+        display: none;
+
+        @media (max-width: 900px) {
+            @include flex;
+            gap: 1rem;
+        }
+
+        [class*='MuiButton-root'] {
+            flex-grow: 1;
+
+            &:nth-child(1) {
+                background: var(--gradient-213);
+                border: 1px solid var(--clr-platinum-15) !important;
+            }
+        }
+    }
+
+    .shopWrapper {
+        position: relative;
+        //overflow: hidden;
+        border-radius: 1rem;
+    }
+
+    .shop {
+        @include grid('1fr 1fr 1fr 1fr 1fr', 1.5rem);
+        @include hideScroll;  
+    }
+
+    .filtered{
+        background-color: inherit;
+        padding: 1rem .5rem;
+        position: relative;
+        top: -30px;
+        border-radius: 6px;
+        display: none;
+    }
+    .isActive{
+        display: block;
+        background-color: #111;
+    }
+
+    .offer,
+    [class*='shopitem-offer'] {
+        position: inherit;
+        z-index: 70;
+        @include flex-column;
+        @include flex-xy-center;
+        gap: 2rem;
+        min-width: 20rem;
+        height: 100%;
+
+        @include gradientCooper(.3, 180deg, 'shared/assets/img/main/plusbg.png');
+        background-size: contain;
+        border-radius: 1rem;
+
+        &>[class*='hexButton'] {
+            margin-top: 3rem;
+        }
+    }
+
+    [class*='shopitem-offer'] {
+        @include gradientCooper(.9, 180deg, 'shared/assets/img/main/plusbg.png');
+    }
+}

@@ -1,0 +1,328 @@
+@import '../../../styles/index.scss';
+
+.wrapper {
+    background: 
+        linear-gradient(0deg, rgba(45, 27, 22, 1) 7%, rgba(45, 27, 22, .1) 50%);
+    border-radius: 1rem;
+}
+
+.container {
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    border-radius: 1rem;
+    padding: 2rem;
+    @include flex-wrap;
+    justify-content: space-between;
+	align-items: flex-end;
+    background-image: 
+    
+		//linear-gradient(0deg, rgba(45, 27, 22, 1) 7%, rgba(45, 27, 22, .1) 50%), 
+		url('../../../../shared/assets/img/main/toplogo2.png');
+    opacity: 0;
+    
+    @media (max-width: 1600px) {
+        background-position-x: right;
+        background-position-y: top;
+    }
+
+    @media (max-width: 1280px) {
+        @include flex-column;
+        align-items: start;
+    }
+
+    @media (max-width: 900px) {
+        background-size: 55%;
+        background-position-y: 5rem;
+        background-image: none;
+    }
+
+    @media (max-width: 600px) {
+        padding: 2rem 0;
+    }
+
+    .row {
+    
+        .dot {
+            padding: .2rem;
+            border-radius: 50%;
+            background-color: rgba(var(--green-light), .5);
+
+            &:after {
+                display: block;
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: var(--clr-green-light);
+            }
+        }
+    }
+
+    .inline {
+        @include flex-y-center;
+        gap: .5rem;
+    }
+
+    .left {
+        position: relative;
+        @include flex-column;
+        gap: 1rem;
+        height: 23rem;
+        flex-grow: 1;
+
+        @media (max-width: 900px) {
+            height: auto;
+            width: 100%;
+
+            &:before {
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-image: url('../../../../shared/assets/img/main/toplogo2.png');
+                background-repeat: no-repeat;
+                background-position-x: right;
+                background-position-y: bottom;
+                background-size: contain;
+
+                @media (max-width: 600px) {
+                    background-position-x: right;
+                    background-size: contain;
+                    //opacity: .7;
+                }
+            }
+        }
+
+        @media (max-width: 600px) {
+            background: unset;
+            //background-size: cover;
+            height: auto;
+            padding: 0 1rem;
+            padding-bottom: 2rem;
+        }
+
+        .info {
+            position: inherit;
+            z-index: 1;
+            @include flex-column;
+            gap: 1rem;
+
+            &>div {
+                order: 1;
+                max-width: 70%;
+                line-height: 1.2;
+            }
+
+            @media (max-width: 900px) {
+
+                &>div:nth-child(1) {
+                    position: absolute;
+                    right: 0;
+                }
+
+                &>div:nth-child(2) {
+                    order: 2;
+                    max-width: 35%;
+                    flex-grow: 1;
+
+                    [class*='MuiButton-root'] {
+                        padding: 2rem 1rem !important;
+                        width: 100% !important;
+                        justify-content: start;
+                        font-size: 16px;
+                    }
+                }
+
+                &>div:nth-child(3),
+                &>div:nth-child(4) {
+                    max-width: 50%;
+
+                    @media (max-width: 600px) {
+                        max-width: 70%;
+                    }
+                }
+            }
+
+            @media (max-width: 600px) {
+
+                &>div:nth-child(1) {
+                    position: relative;
+                }
+
+                &>div:nth-child(2) {
+                    max-width: 60%;
+                }
+
+                &>div:nth-child(3),
+                &>div:nth-child(4) {
+                    max-width: 100%;
+                }
+            }
+
+        }
+
+        .buttons {
+            @include flex;
+            gap: .5rem;
+
+            @media (max-width: 900px) {
+                display: none;
+            }
+        }
+    }
+
+    .right {
+        @include flex;
+        gap: 1rem;
+        flex: 0 0 35%;
+
+        @media (max-width: 1900px) {
+            flex: unset;
+        }
+
+        @media (max-width: 1600px) {
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            @include flex-column;
+        }
+
+        .buttons {
+            display: none;
+
+            @media (max-width: 900px) {
+                @include flex-column;
+                gap: .5rem;
+
+                [class*='MuiButton-root'] {
+                    flex-grow: 1;
+                    justify-content: start;
+                    padding: 2rem 1rem !important;
+                }
+            }
+            @media (max-width: 600px){
+                padding: 0 1rem;
+            }
+        }
+
+        .labels {
+            @include flex-column;
+            @include flex-y-center;
+            gap: 1rem;
+
+            @media (max-width: 900px) {
+                flex-direction: row;
+                justify-content: space-around;
+
+            }
+            @media (max-width: 600px){
+                padding: .5rem 1rem;
+            }
+
+            .item {
+                @include shine;
+                
+                @include flex-column;
+                @include flex-y-center;
+                gap: .5rem;
+                text-transform: uppercase;
+                text-align: center;
+                padding: .5rem 2.2rem;
+                border-radius: 1rem;
+                background: var(--gradient-213);
+                border: 1px solid rgba(var(--white), .03);
+
+                &.red {
+                    background: var(--gradient-red) !important;
+                }
+            }
+        }
+
+		.videoPreview {
+			@include flex-y-center;
+            flex-grow: 1;
+
+			.videoContainer {
+				position: relative;
+                min-width: 455px;
+				min-height: 275px;
+				overflow: hidden;
+				border-radius: 1rem;
+				@include flex-xy-center;
+                @include flex-column;
+
+                width: 100%;
+                height: 100%;
+
+                @media (max-width: 600px) {
+                    min-width: 300px;
+                    margin: 0 1rem;
+                }
+
+                &>[class*='hexButton'] {
+                    margin-top: 3rem;
+                }
+
+				.preview {
+					--blur: 2px;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-image: 
+						linear-gradient(0deg, rgba(45, 27, 22, .5) 50%, rgba(45, 27, 22, .5) 100%),
+						url('../../../../shared/assets/img/main/videopreview.png');
+					-webkit-filter: blur(var(--blur));
+					-moz-filter: blur(var(--blur));
+					-o-filter: blur(var(--blur));
+					-ms-filter: blur(var(--blur));
+					filter: blur(var(--blur));
+				}
+
+				.label {
+					position: absolute;
+					top: 0;
+					@include flex-xy-center;
+                    width: 50%;
+					
+					.trapezeWrapper {
+						position: relative;
+						color: var(--clr-black);
+						width: 100%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						height: 4rem;
+						margin-top: -.5rem;
+
+						@include trapeze('down', 12%);
+
+						.trapeze {
+							position: absolute !important;
+							z-index: 2;
+							top: .5rem;
+							width: calc(100% - 2rem);
+							height: 3rem;
+							color: var(--clr-cooper);
+							
+							@include trapeze('down', 10%);
+						}
+					}
+				}
+
+                &>[class*='Typography_root'] {
+                    position: inherit;
+                    text-transform: uppercase;
+                    margin-top: 1.5rem;
+                }
+			}
+		}
+    }
+}

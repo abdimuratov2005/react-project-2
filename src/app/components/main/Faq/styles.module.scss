@@ -1,0 +1,61 @@
+@import '../../../styles/index.scss';
+
+.container {
+    @include flex-column;
+    gap: 1rem;
+    opacity: 0;
+
+    @media (max-width: 600px){
+        padding: 0 1rem;
+    } 
+
+    .buttons {
+        @include flex-x-center;
+        gap: 1rem;
+
+        @media (max-width: 900px) {
+            @include flex-column;
+            width: 100%;
+
+            [class*='MuiButton-root'] {
+                width: 100% !important;
+                justify-content: start;
+            }
+        }
+    }
+
+    .faqlist {
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 1rem;
+
+            &>div:nth-last-child(1):nth-child(odd) {
+                grid-column: span 2;
+            }
+
+            @media (max-width: 1280px) {
+                @include flex-column;
+                gap: 1rem;
+            }
+
+            &.hidden {
+                display: none !important;
+            }
+        }
+    }
+
+    .answerSteps {
+        @include flex;
+        gap: 1rem;
+
+        @media (max-width: 1280px) {
+            @include flex-wrap;
+        }
+
+        @media (max-width: 600px) {
+            @include flex-column;
+        }
+    }
+}

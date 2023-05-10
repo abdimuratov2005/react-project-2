@@ -1,0 +1,40 @@
+.dot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.color-cooper {
+        --dot-clr: var(--clr-cooper);
+    }
+
+    svg path {
+        stroke: var(--dot-clr);
+        stroke-opacity: .2;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--dot-clr);
+    }
+
+    $dotSizes: 18px,
+        30px;
+
+    @mixin initDotSizes() {
+        @each $size in $dotSizes {
+            &.size-#{$size} {
+                svg {
+                    width: $size;
+                    height: $size;
+                }
+            }
+        }
+    }
+
+    @include initDotSizes();
+}

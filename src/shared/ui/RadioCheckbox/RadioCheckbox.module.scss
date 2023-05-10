@@ -1,0 +1,47 @@
+.wrapper {
+    max-width: 62px;
+    max-height: 32px;
+
+    &*:hover {
+        box-shadow: none;
+    }
+
+    [class*='MuiTabs-root'] {
+        [class*='MuiTabs-flexContainer'] {
+            background-color: #272728;
+            border: none;
+            width: 62px;
+            height: 32px;
+            border-radius: 111px;
+            overflow: hidden;
+
+            [class*='MuiButtonBase'] {
+                font-size: 0;
+                min-width: 0;
+                min-height: 0;
+                padding: 0;
+                width: 30px;
+                height: 100%;
+            }
+        }
+
+        [class*='MuiTabs-scroller'] {
+            [class*='MuiTabs-indicator'] {
+                top: 4px !important;
+                transform: translateX(4px);
+                height: 24px !important;
+                width: 24px !important;
+                border-radius: 50% !important;
+                background-color: #201E1F;
+                border: 7px solid #352E30;
+            }
+        }
+    }
+
+    .active {
+        [class*='MuiTabs-indicator'] {
+            background-color: #fff !important;
+            border-color: var(--clr-green) !important;
+        }
+    }
+}

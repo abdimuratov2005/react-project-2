@@ -1,0 +1,22 @@
+@import '../../../../app/styles/index.scss';
+
+.container {
+    position: relative;
+    //padding: 1rem;
+    white-space: nowrap;
+
+    .cover {
+        background: white;
+        height: 100%;
+        overflow: hidden;
+        mix-blend-mode: color;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .svg {
+        fill: var(--clr-cooper);
+        //stroke: var(--clr-cooper);
+    }
+}

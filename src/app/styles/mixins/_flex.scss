@@ -1,0 +1,55 @@
+@mixin flex {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@mixin flex-wrap {
+    @include flex;
+    flex-wrap: wrap !important;
+}
+
+@mixin flex-y-center {
+    @include flex;
+    align-items: center;
+}
+@mixin flex-y-top {
+    @include flex;
+    align-items: start;
+}
+@mixin flex-y-bottom {
+    @include flex;
+    align-items: end;
+}
+
+@mixin flex-x-center {
+    @include flex;
+    justify-content: center;
+}
+@mixin flex-x-left {
+    @include flex;
+    justify-content: start;
+}
+@mixin flex-x-right {
+    @include flex;
+    justify-content: end;
+}
+
+@mixin flex-xy-center {
+    @include flex-y-center;
+    @include flex-x-center;
+}
+
+@mixin flex-column {
+    @include flex;
+    flex-direction: column;
+}
+
+
+/********************** GRID ***********************/
+// https://habr.com/ru/companies/macloud/articles/564182/
+
+@mixin grid($cols, $gap) {
+    display: grid;
+    grid-template: $cols;
+    grid-gap: $gap;
+}

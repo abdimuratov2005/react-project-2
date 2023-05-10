@@ -1,0 +1,11 @@
+export const appleIcon = require('./apple.png');
+export const bitcoinIcon = require('./bitcoin.png');
+export const epsIcon = require('./eps.png');
+export const googleIcon = require('./google.png');
+export const gpIcon = require('./gp.png');
+export const idealIcon = require('./ideal.png');
+export const paypalIcon = require('./paypal.png');
+export const qiwiIcon = require('./qiwi.png');
+export const skrillIcon = require('./skrill.png');
+export const visaIcon = require('./visa.png');
+export const wmIcon = require('./wm.png');

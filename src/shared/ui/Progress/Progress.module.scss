@@ -1,0 +1,79 @@
+@import '../../../app/styles/index.scss';
+
+.wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    width: 100%;
+
+    .icon {
+        @include progress-icon;
+
+        .check {
+            display: inline-block;
+            transform: rotate(45deg);
+            height: 14px;
+            width: 7px;
+            border-bottom: 2px solid var(--clr-black);
+            border-right: 2px solid var(--clr-black);
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        flex-grow: 1;
+
+        .progress {
+            display: flex;
+            gap: 2rem;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 900;
+            line-height: 17px;
+
+            .label {
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--text-platinum);
+
+                &.upper {
+                    text-transform: uppercase;
+                }
+
+                &.color-gray {
+                    color: var(--text-gray);
+
+                }
+            }
+
+            .value {
+                color: var(--text-platinum);
+            }
+        }
+
+        [class*='MuiSlider-root'] {
+            height: 10px;
+            padding: 0;
+
+            [class*='MuiSlider-rail'] {
+                height: 10px;
+                opacity: 1;
+                background: #131114;
+            }
+
+            [class*='MuiSlider-track'] {
+                height: 10px;
+                border: none;
+                opacity: 1;
+                background: var(--clr-cooper);
+            }
+
+            [class*='MuiSlider-thumb'] {
+                display: none;
+            }
+        }
+    }
+}

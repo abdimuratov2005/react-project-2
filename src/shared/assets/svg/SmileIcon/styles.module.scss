@@ -1,0 +1,9 @@
+@import '../../../../app/styles/index.scss';
+
+.svg {
+    fill: var(--clr-platinum-15);
+
+    &:hover {
+        fill: var(--clr-platinum);        
+    }
+}

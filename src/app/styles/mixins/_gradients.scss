@@ -1,0 +1,26 @@
+@mixin gradientCooper($op, $deg, $bg) {
+    background: 
+        linear-gradient($deg, rgba(var(--bgmain), $op) 10%, rgba(var(--cooper-dark), $op) 90%),
+        url('../../../#{$bg}');
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin gradientBlack($op, $deg, $bg) {
+    background: 
+        linear-gradient($deg, rgba(var(--black), $op) 30%, rgba(var(--black), $op) 90%),
+        url('../../../#{$bg}');
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin bgImage($bg) {
+    background-image: url('../../../#{$bg}');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

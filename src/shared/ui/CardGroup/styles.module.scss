@@ -1,0 +1,63 @@
+@import '../../../app/styles/index.scss';
+
+.paper {
+    @include paper;
+}
+$cardGaps: (
+    '1': 1rem,
+    '1-5': 1.5rem,
+    '2': 2rem,
+    '2-5': 2.5rem,
+    '3': 3rem,
+);
+
+@mixin CardGroupGaps() {
+    @each $name, $gap in $cardGaps {
+        &.gap-#{$name} {
+            gap: $gap;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    
+    @include CardGroupGaps();
+
+    &.grow {
+        &>* {
+            flex-grow: 1;
+        }
+    }
+
+    &.justify-start {
+        justify-content: start;
+    }
+
+    &.justify-end {
+        justify-content: end;
+    }
+
+    &.justify-between {
+        justify-content: space-between;
+    }
+
+    &.contained {
+        &>* {
+            flex-grow: 1;
+        }
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+    &.align-start {
+        align-items: start;
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+}
+

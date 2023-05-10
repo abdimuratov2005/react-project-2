@@ -1,0 +1,68 @@
+@import '../../../styles/index.scss';
+
+.container {
+    position: absolute;
+    top: 4.5rem;
+    left: 4rem;
+    z-index: 200;
+
+    @media (max-width: 1900px) {
+        left: 11.7rem;
+    }
+
+    @media (max-width: 1280px) {
+        left: 9.2rem;
+    }
+    @media (max-width: 1100px) {
+        left: 8.2rem;
+    }
+    @media (max-width: 600px) {
+        left: 6.7rem;
+    }
+    @media (max-width: 500px) {
+        left: 5.4rem;
+    }
+    @media (max-width: 400px) {
+        left: 4.7rem;
+        top: 4.1rem;
+
+    }
+
+    @include flex-column;
+    gap: 1rem;
+    background-color: var(--clr-darkbg);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: fit-content;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: -1rem;
+        left: .8rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 .5rem 1rem .5rem;
+        border-color: transparent transparent var(--clr-darkbg) transparent;
+    }
+
+    .item {
+        @include flex-y-center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--gradient-213);
+        border-radius: .5rem;
+        border: 1px solid var(--clr-platinum-5);
+        cursor: pointer;
+
+        &:hover {
+            background: var(--clr-cooper);
+
+            [class*='Typography_root'] {
+                color: var(--clr-black) !important;
+                font-weight: 900;
+            }
+        }
+    }
+}

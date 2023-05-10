@@ -1,0 +1,50 @@
+@import '../../../styles/index.scss';
+
+.container {
+    position: absolute;
+    top:3.7rem;
+    right: 4rem;
+    z-index: 200;
+
+    @media (max-width: 1280px) {
+        right: 1.5rem;
+    }
+    @media (max-width: 600px) {
+        right: 1rem;
+    }
+
+    @include grid('1fr 1fr 1fr', 1rem);
+    justify-content: space-between;
+    background-color: var(--clr-bg);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: fit-content;
+    border: 1px solid var(--clr-platinum-5);
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: -.5rem;
+        right: .6rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 .5rem 1rem .5rem;
+        border-color: transparent transparent var(--clr-bg) transparent;
+    }
+
+    .item {
+
+        [class*='MuiButtonBase-root'] {
+            @include flex-column;
+            @include flex-xy-center;
+            gap: 1rem;
+            width: 6rem !important;
+            height: 6rem !important;
+            padding: 0 !important;
+            font-size: 10px !important;
+            white-space: break-spaces;
+            line-height: 1.2;
+        }
+    }
+}

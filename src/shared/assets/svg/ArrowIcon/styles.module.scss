@@ -1,0 +1,28 @@
+@import '../../../../app/styles/index.scss';
+
+.container {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .3rem;
+    transform: rotate(45deg);
+    background-color: var(--clr-cooper);
+
+    .svg {
+        fill: var(--clr-black);
+        &.right {
+            rotate: -45deg;
+        }
+        &.down {
+            rotate: 45deg;
+        }
+        &.left {
+            rotate: 135deg;
+        }
+        &.up {
+            rotate: -135deg;
+        }
+    }
+}

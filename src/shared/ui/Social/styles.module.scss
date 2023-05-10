@@ -1,0 +1,31 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+    position: inherit;
+    z-index: 110;
+
+    @include flex-y-center;
+    gap: .5rem;
+    padding: 0;
+    --this-size: 2.5rem;
+
+    // @media (max-width: 500px) {
+    //     --this-size: 2.2rem;
+    // }
+
+    @media (max-width: 600px) {
+        --this-size: 2rem;
+    }
+
+
+    [class*='MuiButton-root'] {
+        width: var(--this-size) !important;
+        height: var(--this-size) !important;
+    }
+
+    .social {
+        @include flex-y-center;
+        gap: .5rem;
+        padding: 0;
+    }
+}

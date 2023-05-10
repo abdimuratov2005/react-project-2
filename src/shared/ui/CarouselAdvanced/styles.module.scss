@@ -1,0 +1,44 @@
+.wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+
+    .container {
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .item {
+        padding-left: 1rem;
+    }
+
+    .dots {
+        position: absolute;
+        bottom: -2rem;
+        width: 100%;
+        gap: .5rem;
+
+        [class*='-dot'] {
+
+            button {
+                width: .8rem;
+                height: .8rem;
+                border-radius: 100%;
+                background-color: var(--clr-platinum-15);
+                cursor: pointer;
+                border: none;
+                margin: 0;
+                padding: 0;
+
+                &:hover {
+                    background-color: var(--clr-cooper);
+                }
+            }
+        }
+
+        [class*='-dot--active'] {
+            button {
+                background-color: var(--clr-cooper);
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import '../../../../../app/styles/index.scss';
+
+.container {
+    color: var(--clr-platinum);
+    font-size: 12px;
+    font-weight: 900;
+    min-width: 15rem;
+    //padding: 1.5rem;
+
+    .logo {
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &.toend {
+            display: flex;
+            justify-content: end;
+        }
+    }
+
+    .title {
+        font-size: 16px;
+        margin: 1rem 0;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .item {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: .5rem;
+
+            &.highlight {
+                color: var(--clr-cooper);
+            }
+
+            
+        }
+    }
+
+    .footer {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .price {
+            color: var(--clr-cooper-light);
+            font-size: 11px;
+
+            p {
+                color: var(--clr-platinum);
+                font-size: 14px;
+            }
+        }
+    }
+}

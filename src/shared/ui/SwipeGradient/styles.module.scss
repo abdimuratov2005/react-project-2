@@ -1,0 +1,43 @@
+@import '../../../app/styles/index.scss';
+
+.container {
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+    --grad: 
+        rgba(var(--black), .8) 10%, 
+        rgba(var(--black), .1) 80%,
+        rgba(var(--black), 0) 90%;
+
+    //transition: var(--transition);
+    animation: fadeIn 1s;
+
+    &.right {
+        right: 0;
+        border-radius: 0 1rem 1rem 0;
+        @media (min-width: 767.98px){
+            background: linear-gradient(-90deg, var(--grad));
+        }
+    }
+
+    .left {
+        left: 0;
+        border-radius: 1rem 0 0 1rem;
+        @media (min-width: 767.98px){
+            background: linear-gradient(-90deg, var(--grad));
+        }
+    }
+
+    @media (max-width: 1900px) {
+        display: block;
+    }
+}

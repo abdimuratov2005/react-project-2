@@ -1,0 +1,60 @@
+@import '../../../../app/styles/index.scss';
+
+.container {
+    
+    .list {
+        font-size: 16px;
+        color: var(--clr-platinum);
+
+        &>.item {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: .5rem;
+            margin: 1rem 0;
+        }
+    }
+
+    .button {
+        width: 100%;
+        //padding: 2rem;
+        padding-top: .5rem !important;
+        
+        [class*='MuiButton-root'] {
+            width: 100%;   
+        }
+    }
+    
+    .langs {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 1rem;
+
+        &>.item {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: .5rem;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+
+        a {
+            color: var(--clr-platinum);
+            font-style: normal;
+            font-size: 14px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

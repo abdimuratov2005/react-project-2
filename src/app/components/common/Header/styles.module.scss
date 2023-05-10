@@ -1,0 +1,400 @@
+@import '../../../../app/styles/index.scss';
+
+.wrapper {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    height: 4rem;
+    background-color: var(--background);
+    width: 100%;
+}
+.container {
+    height: 4rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    padding: 0 4rem;
+
+    @media (max-width: 1280px) {
+        padding: 0 1.5rem;
+    }
+
+    @media (max-width: 1100px) {
+        gap: 1rem;
+
+        [class*='header-social'] {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 0 1rem;
+        gap: .5rem;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 .5rem;
+    }
+
+    .menuButton {
+        position: inherit;
+        z-index: 110;
+        @include flex-y-center;
+
+        @media (min-width: 1850px) {
+            display: none !important;
+        }
+
+        [class*='MuiButton-root'] {
+            padding: .3rem 1rem !important;
+            font-size: 11px !important;
+            color: var(--clr-cooper-light) !important;
+
+            svg,
+            svg path {
+                fill: var(--clr-cooper-light) !important;
+                stroke: var(--clr-cooper-light) !important;
+            }
+
+            // @media (max-width: 600px) {
+            //     padding: .2rem .8rem !important;
+            //     font-size: 10px !important;
+            // }
+
+            // @media (max-width: 500px) {
+            //     padding: 0 .5rem !important;
+            // }
+
+            @media (max-width: 600px) {
+                padding: 0 .2rem !important;
+                font-size: 9px !important;
+            }
+
+        }
+
+        
+    }
+
+    &>div {
+        height: 100%;
+    }
+
+    .center {
+        @include flex;
+        flex-grow: 1;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        white-space: nowrap;
+
+        @media (max-width: 1850px) {
+            display: none !important;
+        }
+
+        &.right {
+            gap: 0;
+
+            .item {
+                margin: 3px 1rem 0 1rem;
+            }
+        }
+
+        .item {
+            text-transform: uppercase;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 7px;
+
+            margin: 0 1rem;
+            color: var(--clr-cooper-light);
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            height: 100%;
+            margin-top: 3px;
+            border-bottom: 2px solid transparent;
+
+            &.active {
+                border-bottom: 2px solid var(--clr-cooper);
+            }
+
+            &.special {
+                width: 10rem;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+
+                &.active {
+                    width: 11rem !important;
+                    margin: 0;
+                    margin-left: 1rem !important;
+                    border-bottom: 2px solid transparent !important;
+
+                    [class*='MuiButton-startIcon'] {
+                        gap: 7px;
+                    }
+
+                    [class*='MuiButton-root'] {
+                        margin-top: .3rem;
+                        padding: .2rem 1rem .2rem .5rem !important;
+                        text-transform: uppercase !important;
+                        font-size: 12px !important;
+                        border: none !important;
+
+                        &:hover {
+                            color: var(--clr-black);
+                        }
+                    }
+                }
+            }
+
+            svg {
+                fill: var(--clr-cooper-light);
+                path {
+                    fill: var(--clr-cooper-light);
+                }
+            }
+
+            &.active,
+            &:hover {
+                color: var(--clr-platinum);
+                svg {
+                    fill: var(--clr-cooper);
+                    path {
+                        fill: var(--clr-cooper);
+                    }
+                }
+            }
+        }
+    }
+
+    .logoWrapper {
+        //flex-basis: 25rem;
+        flex-grow: 1;
+
+        .logoContainer {
+            position: absolute;
+            z-index: 102;
+            left: 0;
+            right: 0;
+
+            .glow {
+                position: absolute;
+                top: -30px;
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto;
+                width: 1rem;
+                height: 1px;
+                background-color: rgb(240, 154, 56);
+                box-shadow: 
+                    0 0 70px 20px rgb(240, 154, 56), 
+                    0 0 140px 40px rgb(240, 154, 56);
+            }
+
+            .logoBg,
+            .logo {
+                position: absolute;
+                width: fit-content;
+                text-align: center;
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto;
+            }
+            .logoBg {
+                top: 1rem;
+            }
+            .logo {
+                top: 1rem;
+
+                @media (max-width: 700px) {
+                    top: 1.2rem;
+                }
+                // @media (max-width: 600px) {
+                //     top: 1.4rem;
+                // }
+
+            }
+
+            &:after {
+                content: "";
+                background: var(--clr-cooper);
+                position: absolute;
+                top: 0;
+                height: 2px;
+                width: 7rem;
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto;
+            }
+        }
+    }
+
+    .menuSecondary {
+        position: inherit;
+        z-index: 110;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        //flex-grow: 1;
+
+        @media (max-width: 1000px) {
+            gap: .5rem;
+        }
+
+        .balance,
+        .login,
+        .register {
+
+            [class*='MuiButton-root'] {
+                @include flex-y-center;
+                padding: 0 .3rem 0 1rem !important;
+                //width: 2rem;
+                height: 2.5rem;
+                min-width: auto;
+                font-size: 12px;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+            [class*='MuiButton-startIcon'],
+            [class*='MuiButton-endIcon'] {
+                margin: 0 !important;
+            }
+        }
+
+        .balance {
+            [class*='MuiButton-root'] {
+                padding: 0 1rem 0 .3rem !important;
+            }
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
+        }
+
+        .cart {
+            position: relative;
+
+            &>.label {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: -.5rem;
+                right: -.5rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background-color: var(--clr-cooper);
+                color: var(--clr-black);
+                font-size: 12px;
+                font-weight: 900;
+            }
+        }
+
+        .search,
+        .cart,
+        .profile {
+            
+            [class*='MuiButton-root'] {
+                padding: .5rem !important;
+                min-width: auto;
+                --this-size: 2.5rem;
+
+                // @media (max-width: 500px) {
+                //     --this-size: 2.2rem;
+                // }
+            
+                @media (max-width: 600px) {
+                    --this-size: 2rem;
+                }
+                
+                width: var(--this-size) !important;
+                height: var(--this-size) !important;
+            }
+        }
+
+        .searchBar{
+            position: fixed;
+            left: 0;
+            transition: .5s ease background-color;
+            top: 0;
+            width: 100%;
+            z-index: 9999999;
+            background-color: #222;
+            height: 100vh;
+            padding: 1rem 1.5rem;
+            overflow: hidden;
+        }
+        .searchCloseButton{
+            position: fixed;
+            bottom: 1rem;
+            left: 50%;
+            padding: 1rem 2rem !important;
+        }
+
+        .profile {
+            &.notLoggedIn {
+                display: none;
+            }
+
+            @media (max-width: 900px) {
+
+                &.notLoggedIn {
+                    display: block;
+                }
+            }
+        }
+        
+        .login {
+
+            @media (max-width: 900px) {
+
+                &.notLoggedIn {
+                    display: none;
+                }
+            }
+
+            
+        }
+
+        .register {
+
+            [class*='MuiButton-root'] {
+
+                // @media (max-width: 600px) {
+                //     padding: 0 .3rem 0 .5rem !important;
+                //     height: 2.5rem !important;
+                // }
+
+                // @media (max-width: 500px) {
+                //     height: 2.2rem !important;
+                //     font-size: 10px !important;
+                //     padding: 0 .2rem !important;
+                // }
+
+                @media (max-width: 600px) {
+                    height: 2rem !important;
+                    font-size: 9px !important;
+                    gap: .2rem;
+                    padding: 0 0 0 .5rem !important;
+
+                    [class*='MuiButton-endIcon'] {
+                        //height: 1.5rem !important;
+                        scale: .8;
+                    }
+
+                }
+            }
+        }
+    }
+}

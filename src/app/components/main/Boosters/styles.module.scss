@@ -1,0 +1,105 @@
+@import '../../../styles/index.scss';
+
+.container {
+    @include flex-y-top;
+    gap: 2rem;
+    opacity: 0;
+    overflow: hidden;
+
+    
+    @media (max-width: 1280px) {
+        @include flex-column;
+    }
+    @media (max-width: 600px){
+        padding: 0 1rem;
+    }
+
+    &>.infoBlock {
+        @include grid('1fr', 1rem);
+        flex: 0 0 22rem;
+
+        @media (max-width: 1280px) {
+            flex-basis: auto;
+            width: 100%;
+            @include grid('1fr', 1rem);
+
+            &>div:nth-child(1) {
+                max-width: 1fr;
+                order: 1;
+            }
+
+            &>div:nth-child(2) {
+                order: 2;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            align-items: start;
+            
+            &>div:nth-child(1),
+            &>div:nth-child(2) {
+                max-width: unset;
+            }
+        }
+
+        @media (max-width: 600px) {
+            grid-template-areas:
+                "A"
+                "B";
+        }
+
+        .item {
+            @include flex-y-center;
+            gap: 1rem;
+            @media (min-width: 1280px) {
+                width: 100%;
+            }
+
+            @media (max-width: 600px) {
+                
+                &:nth-child(1) {
+                    grid-area: A;
+                }
+                &:nth-child(2) {
+                    grid-area: B;
+                }
+            }
+
+            &.pad {
+                @media (min-width: 1280px){
+                    padding-left: 2.5rem;
+                }
+                @media (max-width: 600px) {
+                    padding-left: 2rem;
+                }
+            }
+        }
+    }
+
+    &>.gamesBlock {
+        position: relative;
+        overflow: hidden;
+        //@include flex-x-center;
+        flex-grow: 1;
+        //width: 100%;
+        
+        &>.wrapper {
+            @include flex-wrap;
+        }
+    }
+    & .seemore{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 95vw !important;
+    }
+    & .infoHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (min-width: 1280px){
+            flex-direction: column;
+        }
+    }
+}
